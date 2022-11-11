@@ -81,5 +81,88 @@ h6 {
     font-size: 1rem;
 }
 
-/*END */
+/* NAV */
+/* ==================================================================================================== */
+
+nav {
+    background-color: var(--colorWhite);
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-center h4 {
+    color: var(--colorBlue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-transform: capitalize;
+    font-size: 1rem;
+    color: var(--colorBlack);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--colorLightBlue);
+}
+
+/* MAIN */
+/* ==================================================================================================== */
+
+main {
+    height: calc(100vh - 4rem);
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.container h2 {
+    background: var(--colorBlack);
+    color: var(--colorWhite);
+    padding: 1rem;
+    border-radius: var(--borderRadius);
+    margin-bottom: 2rem;
+}
+
+.color {
+    text-transform: uppercase;
+}
+
+.btn-hero {
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--colorBlack);
+    letter-spacing: 0.25rem;
+    font-weight: bold;
+    border: 2px solid var(--colorBlack);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-hero:hover {
+    color: var(--colorWhite);
+    background: var(--colorBlack);
+}
+
+/* END */
 /* ==================================================================================================== */
