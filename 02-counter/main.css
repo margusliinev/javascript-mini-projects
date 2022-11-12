@@ -81,5 +81,46 @@ h6 {
     font-size: 1rem;
 }
 
+/* MAIN */
+/* ==================================================================================================== */
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 4rem;
+}
+
+#value {
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+.counter-btn {
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--colorBlack);
+    border: 2px solid var(--colorBlack);
+    margin: 0.5rem;
+    letter-spacing: var(--letterSpacing);
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.counter-btn:hover {
+    background: var(--colorBlack);
+    color: white;
+}
+
 /* END */
 /* ==================================================================================================== */
