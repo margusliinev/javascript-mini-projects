@@ -96,11 +96,13 @@ main {
 
 .container h1 {
     font-size: 4rem;
+    color: var(--colorBlack);
 }
 
 #value {
     font-size: 7rem;
     font-weight: 600;
+    color: var(--colorBlack);
 }
 
 .counter-btn {
