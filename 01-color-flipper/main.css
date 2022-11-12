@@ -85,11 +85,13 @@ h6 {
 /* ==================================================================================================== */
 
 nav {
-    background-color: var(--colorWhite);
+    background-color: #f1f1f1;
     height: 4rem;
+    width: 100%;
     display: grid;
     place-items: center;
     box-shadow: 0 0px 10px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
 }
 
 .nav-center {
@@ -105,19 +107,17 @@ nav {
     color: var(--colorBlue);
 }
 
-.nav-links {
-    display: flex;
-    gap: 1rem;
-}
-
-nav a {
-    text-transform: capitalize;
+.nav-btn {
+    border: none;
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--borderRadius);
     font-size: 1rem;
-    color: var(--colorBlack);
+    color: var(--colorDarkBlue);
+    cursor: pointer;
     transition: var(--transition);
 }
 
-nav a:hover {
+.nav-btn:hover {
     color: var(--colorLightBlue);
 }
 
@@ -125,9 +125,10 @@ nav a:hover {
 /* ==================================================================================================== */
 
 main {
-    height: calc(100vh - 4rem);
+    height: 100vh;
     display: grid;
     place-items: center;
+    background-color: var(--colorWhite);
 }
 
 .container {
@@ -162,6 +163,50 @@ main {
 .btn-hero:hover {
     color: var(--colorWhite);
     background: var(--colorBlack);
+}
+
+/* POPUP */
+/* ==================================================================================================== */
+
+.popup {
+    position: absolute;
+    background-color: var(--colorWhite);
+    width: 300px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+    top: 8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--borderRadius);
+    box-shadow: 0 0 10px 1px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.show-popup {
+    animation: appear 2s;
+}
+
+.popup-container {
+    text-align: center;
+}
+
+.popup-container h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* END */
