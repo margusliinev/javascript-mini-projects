@@ -114,6 +114,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
     text-align: center;
+    display: grid;
 }
 
 .img-container {
@@ -169,7 +170,9 @@ main {
 }
 
 #info {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    height: 90px;
+    overflow: hidden;
 }
 
 .prev-btn,
@@ -200,6 +203,8 @@ main {
     letter-spacing: var(--letterSpacing);
     cursor: pointer;
     transition: var(--transition);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .random-btn:hover {
