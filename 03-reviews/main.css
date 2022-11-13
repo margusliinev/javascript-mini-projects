@@ -1,0 +1,211 @@
+/* GLOBAL STYLES & IMPORTS */
+/* ==================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --colorDarkBlue: #114084;
+    --colorBlue: #3466aa;
+    --colorLightBlue: #82b7dc;
+    --colorWhite: #f1f1f1;
+    --colorGrey: #808080;
+    --colorBlack: #1c1c1c;
+    --colorLightRed: #f8d7da;
+    --colorDarkRed: #dc3545;
+    --colorLightGreen: #d4edda;
+    --colorDarkGreen: #28a745;
+    --fontPrimary: 'Poppins', sans-serif;
+    --letterSpacing: 1px;
+    --borderRadius: 0.25rem;
+    --transition: all 0.15s ease-in-out;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+/* MAIN */
+/* ==================================================================================================== */
+
+.title {
+    text-align: center;
+}
+
+.title-underline {
+    height: 0.3rem;
+    background-color: var(--colorBlue);
+    width: 8rem;
+    margin: 0 auto;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 80vw;
+    max-width: 600px;
+}
+
+.review {
+    margin-top: 3rem;
+    background: var(--colorWhite);
+    padding: 1.5rem 2rem;
+    border-radius: var(--borderRadius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.img-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+}
+
+.img-container::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--colorBlue);
+    position: absolute;
+    border-radius: 50%;
+    top: -0.25rem;
+    right: -0.5rem;
+}
+
+.img-container::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--colorBlue);
+    border-radius: 50%;
+    color: var(--colorWhite);
+    transform: translateY(25%);
+    font-family: 'Font Awesome 6 Free';
+    content: '\f10e';
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+}
+
+#person-img {
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+#author {
+    margin-bottom: 0.25rem;
+}
+
+#job {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--colorBlue);
+}
+
+#info {
+    margin-bottom: 1rem;
+}
+
+.prev-btn,
+.next-btn {
+    color: var(--colorBlue);
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.3rem;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    color: var(--colorLightBlue);
+}
+
+.random-btn {
+    margin-top: 1rem;
+    background: var(--colorWhite);
+    color: var(--colorDarkBlue);
+    border: 2px solid var(--colorBlue);
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    border-radius: var(--borderRadius);
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.random-btn:hover {
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+}
+
+/* END */
+/* ==================================================================================================== */
