@@ -35,7 +35,6 @@ html {
 body {
     font-family: var(--fontPrimary);
     line-height: 1.5;
-    background-color: var(--colorWhite);
 }
 
 img {
@@ -86,12 +85,13 @@ h6 {
 /* ==================================================================================================== */
 
 nav {
-    height: 5rem;
     width: 100%;
     background-color: white;
     display: grid;
     place-items: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: fixed;
 }
 
 .nav-center {
@@ -104,6 +104,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 0;
 }
 
 .nav-btn {
@@ -124,9 +125,33 @@ nav {
     color: var(--colorBlue);
 }
 
-.nav-icons,
-.nav-links {
+.nav-icons {
     display: none;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: var(--colorBlack);
+    transition: var(--transition);
+    letter-spacing: var(--letterSpacing);
+}
+
+.nav-links a:hover {
+    color: var(--colorLightBlue);
+    padding-left: 0.5rem;
+}
+
+.nav-links {
+    display: grid;
+    row-gap: 1rem;
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.show-links {
+    height: 12rem;
 }
 
 @media screen and (min-width: 900px) {
@@ -140,21 +165,12 @@ nav {
     }
     .nav-links {
         gap: 1.5rem;
+        height: auto;
     }
     .nav-center {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    .nav-links a {
-        font-size: 1.1rem;
-        text-transform: capitalize;
-        color: var(--colorBlack);
-        transition: var(--transition);
-        letter-spacing: var(--letterSpacing);
-    }
-    .nav-links a:hover {
-        color: var(--colorLightBlue);
     }
     .nav-icons a {
         font-size: 1.5rem;
@@ -164,6 +180,39 @@ nav {
     .nav-icons a:hover {
         color: var(--colorLightBlue);
     }
+    .nav-links a:hover {
+        color: var(--colorLightBlue);
+        padding-left: 0rem;
+    }
+}
+
+/* SECTIONS */
+/* ==================================================================================================== */
+
+section {
+    height: calc(100vh - 80px);
+}
+
+section h1 {
+    text-align: center;
+    color: var(--colorBlue);
+}
+
+#home {
+    height: 100vh;
+    background: white;
+}
+
+#about {
+    background: var(--colorWhite);
+}
+
+#projects {
+    background: white;
+}
+
+#contact {
+    background: var(--colorWhite);
 }
 
 /* END */
