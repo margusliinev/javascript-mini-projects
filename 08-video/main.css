@@ -151,5 +151,16 @@ header::after {
     border-radius: 0.5rem;
 }
 
+@keyframes appear {
+    0% {
+        opacity: 0;
+        font-size: 0;
+    }
+    100% {
+        opacity: 1;
+        font-size: 3rem;
+    }
+}
+
 /* END */
 /* ==================================================================================================== */
