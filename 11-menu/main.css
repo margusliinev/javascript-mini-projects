@@ -1,0 +1,190 @@
+/* GLOBAL STYLES & IMPORTS */
+/* ==================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --colorDarkBlue: #114084;
+    --colorBlue: #3466aa;
+    --colorLightBlue: #82b7dc;
+    --colorWhite: #f1f1f1;
+    --colorGrey: #808080;
+    --colorBlack: #1c1c1c;
+    --colorLightRed: #f8d7da;
+    --colorDarkRed: #dc3545;
+    --colorLightGreen: #d4edda;
+    --colorDarkGreen: #28a745;
+    --fontPrimary: 'Poppins', sans-serif;
+    --letterSpacing: 1px;
+    --borderRadius: 0.25rem;
+    --transition: all 0.15s ease-in-out;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+    position: relative;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+/* MENU */
+/* ==================================================================================================== */
+
+.menu {
+    padding: 5rem 0;
+}
+
+.title h2 {
+    text-align: center;
+}
+
+.title-underline {
+    height: 0.3rem;
+    width: 5rem;
+    background-color: var(--colorBlue);
+    margin: 0 auto;
+}
+
+.btn-container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--colorBlue);
+    border: 2px solid var(--colorBlue);
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    text-transform: capitalize;
+    border-radius: var(--borderRadius);
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    gap: 3rem 2rem;
+    justify-items: center;
+}
+
+.menu-item {
+    display: grid;
+    gap: 1rem 2rem;
+    max-width: 25rem;
+}
+
+.item-img {
+    height: 200px;
+    border-radius: var(--borderRadius);
+}
+
+.item-info-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px dotted var(--colorGrey);
+}
+
+.item-info h5 {
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--colorBlue);
+    font-weight: 600;
+}
+
+.item-text {
+    padding-top: 0.5rem;
+    color: rgb(50, 50, 50);
+}
+
+@media screen and (min-width: 768px) {
+    .menu-item {
+        grid-template-columns: 225px 1fr;
+        gap: 0 1.25rem;
+        max-width: 40rem;
+    }
+    .item-img {
+        height: 175px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .section-center {
+        width: 95vw;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* END */
+/* ==================================================================================================== */
