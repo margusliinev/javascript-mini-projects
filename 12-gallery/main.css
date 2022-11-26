@@ -271,7 +271,7 @@ section {
 .modal-img {
     width: 100%;
     height: 6rem;
-    opacity: 0.15;
+    opacity: 0.2;
     transition: var(--transition);
     cursor: pointer;
 }
