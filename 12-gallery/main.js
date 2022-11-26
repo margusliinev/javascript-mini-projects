@@ -21,22 +21,22 @@ class Gallery {
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.nextImage = this.nextImage.bind(this);
+        this.prevImage = this.prevImage.bind(this);
 
-        this.section.addEventListener('click', this.openModal);
-        this.closeBtn.addEventListener('click', this.closeModal);
+        this.section.addEventListener(
+            'click',
+            function (e) {
+                if (e.target.classList.contains('img')) {
+                    this.openModal(e.target, this.images);
+                }
+                if (e.target.classList.contains('img-container')) {
+                    this.openModal(e.target.querySelector('.img'), this.images);
+                }
+            }.bind(this)
+        );
     }
-    openModal(e) {
-        if (e.target.classList.contains('img')) {
-            this.setImages(e.target, this.images);
-        }
-        if (e.target.classList.contains('img-container')) {
-            this.setImages(e.target.querySelector('.img'), this.images);
-        }
-    }
-    closeModal() {
-        this.modal.classList.remove('open');
-    }
-    setImages(selectedImage, images) {
+    openModal(selectedImage, images) {
         this.mainImg.src = selectedImage.src;
         this.mainImgTitle.textContent = selectedImage.title;
         this.modalImagesContainer.innerHTML = images
@@ -45,6 +45,31 @@ class Gallery {
             })
             .join('');
         this.modal.classList.add('open');
+        this.closeBtn.addEventListener('click', this.closeModal);
+        this.nextBtn.addEventListener('click', this.nextImage);
+        this.prevBtn.addEventListener('click', this.prevImage);
+    }
+    closeModal() {
+        this.modal.classList.remove('open');
+        this.closeBtn.removeEventListener('click', this.closeModal);
+        this.nextBtn.removeEventListener('click', this.nextImage);
+        this.prevBtn.removeEventListener('click', this.prevImage);
+    }
+    nextImage() {
+        const selected = this.modalImagesContainer.querySelector('.selected');
+        const next = selected.nextElementSibling || this.modalImagesContainer.firstElementChild;
+        selected.classList.remove('selected');
+        next.classList.add('selected');
+        this.mainImg.src = next.src;
+        this.mainImgTitle.textContent = next.title;
+    }
+    prevImage() {
+        const selected = this.modalImagesContainer.querySelector('.selected');
+        const previous = selected.previousElementSibling || this.modalImagesContainer.lastElementChild;
+        selected.classList.remove('selected');
+        previous.classList.add('selected');
+        this.mainImg.src = previous.src;
+        this.mainImgTitle.textContent = previous.title;
     }
 }
 
