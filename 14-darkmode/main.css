@@ -4,20 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --colorDarkBlue: #114084;
-    --colorBlue: #3466aa;
-    --colorLightBlue: #82b7dc;
-    --colorWhite: #f1f1f1;
-    --colorGrey: #808080;
-    --colorBlack: #1c1c1c;
-    --colorLightRed: #f8d7da;
-    --colorDarkRed: #dc3545;
-    --colorLightGreen: #d4edda;
-    --colorDarkGreen: #28a745;
+    --clr-bcg: #fff;
+    --clr-font: #282c35;
+    --clr-primary: #d23669;
+    --clr-grey: #64748b;
     --fontPrimary: 'Poppins', sans-serif;
     --letterSpacing: 1px;
     --borderRadius: 0.25rem;
     --transition: all 0.15s ease-in-out;
+}
+
+.dark-theme {
+    --clr-bcg: #282c35;
+    --clr-font: #fff;
+    --clr-primary: #ffa7c4;
+    --clr-grey: #cbd5e1;
 }
 
 *,
@@ -35,6 +36,9 @@ html {
 body {
     font-family: var(--fontPrimary);
     line-height: 1.5;
+    background-color: var(--clr-bcg);
+    color: var(--clr-font);
+    transition: var(--transition);
 }
 
 img {
@@ -100,8 +104,8 @@ h6 {
     letter-spacing: 2px;
 }
 .btn {
-    background: #d23669;
-    color: white;
+    background: var(--clr-primary);
+    color: var(--clr-bcg);
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
     border-color: transparent;
@@ -126,7 +130,7 @@ h6 {
 }
 
 .post h2 {
-    color: #d23669;
+    color: var(--clr-primary);
     text-transform: capitalize;
     letter-spacing: 2px;
     font-size: 1.75rem;
@@ -134,7 +138,7 @@ h6 {
 .post-info {
     margin-bottom: 0.75rem;
     font-style: italic;
-    color: #64748b;
+    color: var(--clr-grey);
 }
 .post-info span {
     margin-right: 0.5rem;
