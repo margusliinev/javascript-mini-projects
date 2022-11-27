@@ -84,3 +84,40 @@ const products = [
         price: 9.99,
     },
 ];
+
+const container = document.querySelector('.products-container');
+const companies = document.querySelector('.companies');
+
+function displayProducts() {
+    const productsData = products
+        .map(({ title, image, price }) => {
+            return `<article class="product">
+                <img src="${image}" class="product-img img" alt="product image" />
+                <footer><h5 class="product-name">${title}</h5></footer>
+                <span class="product-price">$${price}</span>
+            </article>`;
+        })
+        .join('');
+    container.innerHTML = productsData;
+}
+
+function displayButtons() {
+    const uniqueCompanies = products.reduce(
+        (total, current) => {
+            if (!total.includes(current.company)) {
+                total.push(current.company);
+            }
+            return total;
+        },
+        ['all']
+    );
+
+    const companiesData = uniqueCompanies
+        .map((company) => {
+            return `<button class="company-btn">${company}</button>`;
+        })
+        .join('');
+    companies.innerHTML = companiesData;
+}
+
+window.addEventListener('DOMContentLoaded', () => displayProducts(), displayButtons());
