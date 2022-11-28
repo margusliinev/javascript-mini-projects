@@ -84,22 +84,12 @@ const products = [
         price: 9.99,
     },
 ];
+let filteredProducts = [...products];
 
 const container = document.querySelector('.products-container');
 const companies = document.querySelector('.companies');
-
-function displayProducts() {
-    const productsData = products
-        .map(({ title, image, price }) => {
-            return `<article class="product">
-                <img src="${image}" class="product-img img" alt="product image" />
-                <footer><h5 class="product-name">${title}</h5></footer>
-                <span class="product-price">$${price}</span>
-            </article>`;
-        })
-        .join('');
-    container.innerHTML = productsData;
-}
+const form = document.querySelector('.input-form');
+const input = document.querySelector('.search-input');
 
 function displayButtons() {
     const uniqueCompanies = products.reduce(
@@ -114,10 +104,49 @@ function displayButtons() {
 
     const companiesData = uniqueCompanies
         .map((company) => {
-            return `<button class="company-btn">${company}</button>`;
+            return `<button class="company-btn" data-id="${company}">${company}</button>`;
         })
         .join('');
     companies.innerHTML = companiesData;
 }
 
+function displayProducts() {
+    const productsData = filteredProducts
+        .map(({ title, image, price }) => {
+            return `<article class="product">
+                <img src="${image}" class="product-img img" alt="product image" />
+                <footer><h5 class="product-name">${title}</h5></footer>
+                <span class="product-price">$${price}</span>
+            </article>`;
+        })
+        .join('');
+    container.innerHTML = productsData;
+}
+
 window.addEventListener('DOMContentLoaded', () => displayProducts(), displayButtons());
+form.addEventListener('keyup', () => {
+    const value = input.value;
+    filteredProducts = products.filter((product) => {
+        return product.title.toLowerCase().includes(value);
+    });
+    if (filteredProducts.length > 0) {
+        displayProducts();
+    } else {
+        container.textContent = `Sorry, no products matched your search.`;
+    }
+});
+companies.addEventListener('click', (e) => {
+    if (e.target.classList.contains('company-btn')) {
+        if (e.target.dataset.id === 'all') {
+            filteredProducts = [...products];
+        } else {
+            filteredProducts = products.filter((product) => {
+                if (product.company === e.target.dataset.id) {
+                    return product.company;
+                }
+            });
+        }
+        displayProducts();
+        input.value = '';
+    }
+});
