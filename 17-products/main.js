@@ -3,7 +3,7 @@ const url = 'https://course-api.com/javascript-store-products';
 const container = document.querySelector('.products-container');
 
 const fetchProducts = async () => {
-    // container.innerHTML = `<div class="loading"></div>`;
+    container.innerHTML = `<div class="loading"></div>`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -16,7 +16,7 @@ const fetchProducts = async () => {
 const displayProducts = (list) => {
     const products = list
         .map((product) => {
-            return `<a href="product.html" class="single-product">
+            return `<a href="product.html?id=${product.id}" class="single-product">
                         <img src="${product.fields.image[0].url}" class="single-product-img" alt="single product" />
                         <footer>
                             <h5 class="name">${product.fields.name}</h5>
@@ -30,6 +30,7 @@ const displayProducts = (list) => {
 
 const start = async () => {
     const data = await fetchProducts();
+    container.innerHTML = '';
     displayProducts(data);
 };
 
