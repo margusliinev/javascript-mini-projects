@@ -1,0 +1,117 @@
+/* GLOBAL STYLES & IMPORTS */
+/* ==================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --colorDarkBlue: #114084;
+    --colorBlue: #3466aa;
+    --colorLightBlue: #82b7dc;
+    --colorWhite: #f1f1f1;
+    --colorGrey: #808080;
+    --colorBlack: #1c1c1c;
+    --colorLightRed: #f8d7da;
+    --colorDarkRed: #dc3545;
+    --colorLightGreen: #d4edda;
+    --colorDarkGreen: #28a745;
+    --fontPrimary: 'Poppins', sans-serif;
+    --letterSpacing: 1px;
+    --borderRadius: 0.25rem;
+    --transition: all 0.15s ease-in-out;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+/* DAD JOKES */
+/* ==================================================================================================== */
+
+.container {
+    max-width: 1200px;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 10rem 0;
+}
+
+.btn {
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    border: transparent;
+    text-transform: uppercase;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--borderRadius);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--colorDarkBlue);
+}
+
+.result {
+    line-height: 1.75;
+}
+
+/* END */
+/* ==================================================================================================== */
