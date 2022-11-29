@@ -1,0 +1,254 @@
+/* GLOBAL STYLES & IMPORTS */
+/* ==================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --colorDarkBlue: #114084;
+    --colorBlue: #3466aa;
+    --colorLightBlue: #82b7dc;
+    --colorWhite: #f1f1f1;
+    --colorGrey: #808080;
+    --colorBlack: #1c1c1c;
+    --colorLightRed: #f8d7da;
+    --colorDarkRed: #dc3545;
+    --colorLightGreen: #d4edda;
+    --colorDarkGreen: #28a745;
+    --fontPrimary: 'Poppins', sans-serif;
+    --letterSpacing: 1px;
+    --borderRadius: 0.25rem;
+    --transition: all 0.15s ease-in-out;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+/* PRODUCTS */
+/* ==================================================================================================== */
+
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title-underline {
+    background: var(--colorBlue);
+    width: 7rem;
+    height: 0.25rem;
+    margin: 0 auto;
+}
+
+.products {
+    padding: 5rem 0;
+}
+
+.products-center {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.single-product-img {
+    border-radius: var(--borderRadius);
+    height: 15rem;
+}
+
+.single-product footer {
+    padding: 0.75rem 0;
+    text-align: center;
+}
+
+.single-product .name {
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+    color: var(--colorBlack);
+}
+
+.single-product .price {
+    margin-bottom: 0;
+    color: var(--colorBlack);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: var(--letterSpacing);
+}
+
+.error {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.home-link {
+    display: block;
+    width: 150px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.product {
+    padding: 5rem 0;
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.product-loading {
+    text-align: center;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    width: 6rem;
+    height: 6rem;
+    border: 5px solid rgb(50, 50, 50);
+    border-radius: 50%;
+    border-top-color: var(--colorLightBlue);
+    animation: spinner 0.6s linear infinite;
+}
+.loading {
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.product-wrapper img {
+    height: 15rem;
+    border-radius: var(--borderRadius);
+}
+
+.product-color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #222;
+    margin: 0.5rem 0.5rem 0.25rem 0;
+}
+
+.product-info {
+    padding-top: 1rem;
+}
+
+.product-info h3 {
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+.product-info h5 {
+    color: var(--colorBlack);
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+
+.product span {
+    color: var(--colorBlack);
+}
+
+.product p {
+    margin: 0;
+    margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .single-product-img {
+        height: 10rem;
+    }
+    .single-product .name {
+        font-size: 0.85rem;
+    }
+    .single-product .price {
+        font-size: 0.85rem;
+    }
+    .single-product {
+        margin-bottom: 0;
+    }
+    .product-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+    .product-wrapper img {
+        height: 100%;
+        max-height: 500px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* END */
+/* ==================================================================================================== */
