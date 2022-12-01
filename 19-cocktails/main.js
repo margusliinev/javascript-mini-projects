@@ -20,16 +20,27 @@ function displayDrinks(data) {
     const drinks = data
         .map((drink) => {
             return `<a href="drink.html">
-                    <article class="cocktail" data-id="${drink.idDrink}">
-                        <img src="${drink.strDrinkThumb}" alt="cocktail" />
-                        <h3>${drink.strDrink}</h3>
-                    </article>
-                </a>`;
+                        <article class="cocktail" data-id="${drink.idDrink}">
+                            <img src="${drink.strDrinkThumb}" alt="cocktail" />
+                            <h3>${drink.strDrink}</h3>
+                        </article>
+                    </a>`;
         })
         .join('');
     loading.classList.add('hide-loading');
     title.textContent = '';
     container.innerHTML = drinks;
+    setDrink();
+}
+
+function setDrink() {
+    const filteredDrinks = document.querySelectorAll('.cocktail');
+    filteredDrinks.forEach((drink) => {
+        drink.addEventListener('click', (e) => {
+            const id = e.currentTarget.dataset.id;
+            localStorage.setItem('drink', id);
+        });
+    });
 }
 
 async function start(url) {
