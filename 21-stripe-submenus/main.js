@@ -98,3 +98,7 @@ nav.addEventListener('mouseover', function (e) {
         submenu.classList.remove('show');
     }
 });
+
+window.matchMedia('(max-width: 800px)').addEventListener('change', function () {
+    sidebarWrapper.classList.remove('show');
+});
