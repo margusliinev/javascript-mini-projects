@@ -243,7 +243,18 @@ article h4 {
     transition: var(--transition);
 }
 
+.submenu-center a {
+    display: block;
+    color: var(--colorBlack);
+    text-transform: capitalize;
+    transition: var(--transition);
+}
+
 .sidebar-sublinks a:hover {
+    color: var(--colorLightBlue);
+}
+
+.submenu-center a:hover {
     color: var(--colorLightBlue);
 }
 
@@ -254,7 +265,7 @@ article h4 {
 
 .submenu {
     background: var(--colorWhite);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 4rem;
     left: 50%;
