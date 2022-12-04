@@ -1,5 +1,4 @@
 const url = 'https://api.github.com/users/john-smilga/followers?per_page=100';
-const title = document.querySelector('.section-title h1');
 const container = document.querySelector('.container');
 const btnContainer = document.querySelector('.btn-container');
 
@@ -27,7 +26,7 @@ function displayFollowers(data) {
 }
 
 function paginate(followers) {
-    const itemsPerPage = 20;
+    const itemsPerPage = 8;
     const numberOfPages = Math.ceil(followers.length / itemsPerPage);
     const newFollowers = Array.from({ length: numberOfPages }, (_, index) => {
         const start = index * itemsPerPage;
@@ -52,9 +51,27 @@ function setupUI() {
 
 async function init() {
     const data = await fetchFollowers();
-    title.textContent = 'Pagination';
     pages = paginate(data);
     setupUI();
 }
 
+btnContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-container')) return;
+    if (e.target.classList.contains('page-btn')) {
+        index = parseInt(e.target.dataset.index);
+    }
+    if (e.target.parentElement.classList.contains('next-btn')) {
+        index++;
+        if (index > pages.length - 1) {
+            index = 0;
+        }
+    }
+    if (e.target.parentElement.classList.contains('prev-btn')) {
+        index--;
+        if (index < 0) {
+            index = pages.length - 1;
+        }
+    }
+    setupUI();
+});
 window.addEventListener('load', init);
