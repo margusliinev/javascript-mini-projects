@@ -1,5 +1,9 @@
 # Javascript Mini Projects
 
+## Description
+
+This is a repository for small practice projects built with Javascript.
+
 ## Technologies
 
 -   HTML
