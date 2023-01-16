@@ -1,0 +1,273 @@
+/* GLOBAL STYLES & IMPORTS */
+/* ==================================================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --colorDarkBlue: #114084;
+    --colorBlue: #3466aa;
+    --colorLightBlue: #82b7dc;
+    --colorWhite: #f1f1f1;
+    --colorGrey: #808080;
+    --colorBlack: #1c1c1c;
+    --colorLightRed: #f8d7da;
+    --colorDarkRed: #dc3545;
+    --colorLightGreen: #d4edda;
+    --colorDarkGreen: #28a745;
+    --fontPrimary: 'Poppins', sans-serif;
+    --letterSpacing: 1px;
+    --borderRadius: 0.25rem;
+    --transition: all 0.15s ease-in-out;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontPrimary);
+    line-height: 1.5;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+/* PRODUCT OPTIONS */
+/* ==================================================================================================== */
+
+.main {
+    padding-top: 5rem;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.product-slider {
+    position: relative;
+    min-height: 400px;
+    max-width: 450px;
+}
+
+.product-img-container {
+    position: relative;
+    min-height: 400px;
+    max-width: 450px;
+    /* overflow: hidden; */
+}
+
+.product-img {
+    position: absolute;
+    opacity: 0;
+}
+
+.prev-btn {
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #808080;
+    transition: var(--transition);
+}
+
+.next-btn {
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #808080;
+    transition: var(--transition);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    color: var(--colorBlack);
+}
+
+.product-info-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+}
+
+.product-title {
+    font-size: 2rem;
+    text-transform: none;
+    margin-top: 1rem;
+}
+
+.product-color-title,
+.product-memory-title {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.product-color-input-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.product-color-input {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    outline: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.selected {
+    outline: 2px solid #5a8dd4;
+    outline-offset: -1px;
+}
+
+#iphone-red {
+    background: red;
+}
+
+#iphone-blue {
+    background: rgb(84, 119, 147);
+}
+
+#iphone-purple {
+    background: rgb(180, 170, 226);
+}
+
+#iphone-black {
+    background: rgb(46, 53, 61);
+}
+
+#iphone-white {
+    background: rgb(247, 244, 239);
+}
+
+.product-memory {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.product-memory label {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    border: solid 2px rgb(180, 180, 180);
+    cursor: pointer;
+}
+
+.product-memory input {
+    display: none;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-btn {
+    width: 200px;
+    font-size: 1rem;
+    border: none;
+    background-color: #0071e3;
+    color: white;
+    padding: 0.5rem;
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.product-btn:hover {
+    background-color: var(--colorBlue);
+}
+
+@media screen and (min-width: 900px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4rem;
+    }
+    .container {
+        max-width: 750px;
+    }
+}
+
+.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.next {
+    transform: translateX(100%);
+}
+
+.last {
+    transform: translateX(-100%);
+}
+
+/* END */
+/* ==================================================================================================== */

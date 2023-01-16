@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Margus Liinev" />
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <script defer src="main.js"></script>
+        <title>Product Options</title>
+    </head>
+    <body>
+        <!-- PRODUCT OPTIONS -->
+        <!-- ==================================================================================================== -->
+
+        <main class="main">
+            <div class="container">
+                <form>
+                    <div class="product-slider">
+                        <div class="product-img-container">
+                            <img src="./images/iphone-red-1.jpg" class="product-img active" alt="iphone" />
+                            <img src="./images/iphone-red-2.jpg" class="product-img" alt="iphone" />
+                            <img src="./images/iphone-collection.jpg" class="product-img" alt="iphone" />
+                            <img src="./images/iphone-charging.jpg" class="product-img" alt="iphone" />
+                            <img src="./images/iphone-red-3.jpg" class="product-img" alt="iphone" />
+                        </div>
+                        <button class="prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="product-info-container">
+                        <h1 class="product-title">iPhone 14</h1>
+                        <h6 class="product-color-title">Color: Red</h6>
+                        <div class="product-color-input-container">
+                            <input class="product-color-input selected" type="radio" id="iphone-red" name="color" value="red" />
+                            <input class="product-color-input" type="radio" id="iphone-blue" name="color" value="blue" />
+                            <input class="product-color-input" type="radio" id="iphone-purple" name="color" value="purple" />
+                            <input class="product-color-input" type="radio" id="iphone-black" name="color" value="black" />
+                            <input class="product-color-input" type="radio" id="iphone-white" name="color" value="white" />
+                        </div>
+                        <h6 class="product-memory-title">Memory: 128GB</h6>
+                        <div class="product-memory">
+                            <label for="iphone-128" class="selected">128GB</label>
+                            <input class="product-memory-input" type="radio" id="iphone-128" name="memory" value="128" />
+                            <label for="iphone-256">256GB</label>
+                            <input class="product-memory-input" type="radio" id="iphone-256" name="memory" value="256" />
+                            <label for="iphone-512">512GB</label>
+                            <input class="product-memory-input" type="radio" id="iphone-512" name="memory" value="512" />
+                        </div>
+                        <p class="product-price">Price: 950€</p>
+                        <button type="submit" class="product-btn">Add To Cart</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- END -->
+        <!-- ==================================================================================================== -->
+    </body>
+</html>
