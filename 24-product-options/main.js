@@ -8,8 +8,28 @@ const form = document.querySelector('form');
 const colorTitle = document.querySelector('.product-color-title');
 const memoryTitle = document.querySelector('.product-memory-title');
 const price = document.querySelector('.product-price');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalContainer = document.querySelector('.modal-container');
 
-form.addEventListener('submit', function () {});
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    displayProduct();
+});
+
+function displayProduct() {
+    const productPrice = price.textContent.slice(6);
+    const productColor = colorTitle.textContent.slice(6);
+    const productMemory = memoryTitle.textContent.slice(7);
+    const element = document.createElement('div');
+    element.innerHTML = `<h4>Product Details</h4><br><p class="color-result">Color: ${productColor}</p><br><p>Memory: ${productMemory}</p><br><p>Memory: ${productPrice}</p>`;
+    modalContainer.append(element);
+    modalOverlay.classList.add('open-modal');
+    const closeBtn = document.querySelector('.close-btn');
+    closeBtn.addEventListener('click', function () {
+        element.remove();
+        modalOverlay.classList.remove('open-modal');
+    });
+}
 
 colorButtons.forEach((button) => {
     button.addEventListener('click', function (e) {
