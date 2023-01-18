@@ -109,7 +109,8 @@ h6 {
 .second,
 .third,
 .fourth,
-.fifth {
+.fifth,
+.sixth {
     position: absolute;
     display: grid;
     grid-template-columns: 1fr;
@@ -118,7 +119,6 @@ h6 {
     text-align: center;
     width: 400px;
     transition: var(--transition);
-    opacity: 0;
 }
 
 .fa-2x {
@@ -189,6 +189,10 @@ h6 {
 }
 .fifth {
     transform: translateX(300%);
+    opacity: 0;
+}
+.sixth {
+    transform: translateX(400%);
     opacity: 0;
 }
 
