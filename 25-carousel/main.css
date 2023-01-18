@@ -100,7 +100,7 @@ h6 {
     width: 90vw;
     position: relative;
     height: 200px;
-    max-width: 1200px;
+    max-width: 400px;
     overflow: hidden;
     display: flex;
 }
@@ -137,7 +137,7 @@ h6 {
 
 .prev-btn {
     position: absolute;
-    left: -3rem;
+    left: -2rem;
     top: 50%;
     transform: translate(0, -50%);
     background: none;
@@ -155,7 +155,7 @@ h6 {
 
 .next-btn {
     position: absolute;
-    right: -3rem;
+    right: -2rem;
     top: 50%;
     transform: translate(0, -50%);
     background: none;
@@ -194,6 +194,18 @@ h6 {
 .sixth {
     transform: translateX(400%);
     opacity: 0;
+}
+
+@media screen and (min-width: 900px) {
+    .carousel {
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .carousel {
+        max-width: 1200px;
+    }
 }
 
 /* END */
