@@ -37,3 +37,4 @@ This is a repository for small practice projects built with Javascript.
 22. Pagination
 23. Wikipedia search
 24. Product Options
+25. Carousel
