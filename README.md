@@ -9,7 +9,6 @@ This is a repository for small practice projects built with Javascript.
 -   HTML
 -   CSS
 -   Javascript
--   Font-Awesome Library
 
 ## Projects
 
